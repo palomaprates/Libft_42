@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 14:27:02 by pprates           #+#    #+#             */
-/*   Updated: 2026/10/30 14:37:05 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/02 18:38:56 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+static int	ft_isspace(char c)
+{
+	return (c == 32 || (c >= 9 && c <= 13));
+}
 int	ft_atoi(const char *nptr)
 {
 	int	res;
@@ -21,10 +24,12 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	i = 0;
 	res = 0;
+	while (ft_isspace(nptr[i]))
+		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			sign = sign * -1;
+			sign = -sign;
 		i++;
 	}
 	while (ft_isdigit(nptr[i]))
@@ -32,14 +37,14 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return (res);
+	return (res * sign);
 }
 
 // #include <stdio.h>
 // int	main()
 // {
-// 	int res_orig = atoi("+10000pppp");
-// 	int res = ft_atoi("+10000pppp");
+// 	int res_orig = atoi(" +10000pppp");
+// 	int res = ft_atoi("  +10000pppp");
 // 	printf("orig: %d\n", res_orig);
 // 	printf("ft: %d\n", res);
 // }

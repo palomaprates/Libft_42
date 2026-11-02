@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 16:04:30 by pprates           #+#    #+#             */
-/*   Updated: 2026/10/28 16:05:56 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/02 15:24:56 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		d[i] = s[i];
 		i++;
 	}
-	d[i] = '\0';
 	return (dest);
 }
 

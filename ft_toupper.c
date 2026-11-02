@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:23:54 by pprates           #+#    #+#             */
-/*   Updated: 2026/10/30 12:27:27 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/02 15:21:01 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
+}
+
 int	ft_toupper(int c)
 {
-	if (is_lower(c))
+	if (ft_islower(c))
 		c = c - 32;
 	return (c);
 }

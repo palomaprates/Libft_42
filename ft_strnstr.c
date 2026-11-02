@@ -3,38 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:52:43 by pprates           #+#    #+#             */
-/*   Updated: 2026/10/30 14:23:19 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/02 18:23:57 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//************************** */ INCOMPLETA ***********************************************
-static int	is_str_equal(const char *big, const char *little, size_t len, size_t i)
+
+static int	is_str_equal(const char *big, const char *little, size_t i, size_t len)
 {
 	size_t	j;
 
 	j = 0;
-	while (i < len)
+	while (big[i] == little[j] && little[j] && i < len)
 	{
-		if (little[j] == big[i])
-			j++;
 		i++;
+		j++;
 	}
-	if (ft_strlen(little) == j)
+	if (j == ft_strlen(little))
 		return (1);
 	return (0);
 }
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	while (big[i])
+	if (!little[i])
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		if (is_str_equal(big, little, len, i))
+		if (is_str_equal(big, little, i, len))
 			return ((char *)&big[i]);
 		i++;
 	}

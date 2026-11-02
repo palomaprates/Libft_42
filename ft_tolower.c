@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:23:51 by pprates           #+#    #+#             */
-/*   Updated: 2026/10/30 12:23:52 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/02 15:47:16 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	is_lower(int c)
+static int	ft_isupper(int c)
 {
-	return (c >= 'a' && c <= 'z');
+	return (c >= 'A' && c <= 'Z');
 }
 
 int	ft_tolower(int c)
 {
-	if (!is_lower(c))
+	if (ft_isupper(c))
 		c = c + 32;
 	return (c);
 }
