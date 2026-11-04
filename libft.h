@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:49:14 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/04 17:31:59 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/04 18:35:49 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ char		*ft_strtrim(char const *s1, char const *set);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
