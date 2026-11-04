@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:45:50 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/02 15:27:16 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/03 14:04:12 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const char	*str1;
 	const char	*str2;
-	int				cmp;
+	int			cmp;
+
 	str1 = (const char *)s1;
 	str2 = (const char *)s2;
 	cmp = ft_strncmp(str1, str2, n);

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:52:43 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/02 18:23:57 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/03 14:05:59 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_str_equal(const char *big, const char *little, size_t i, size_t len)
+static int	is_str_equal(const char *big, const char *little, size_t i, \
+size_t len)
 {
 	size_t	j;
 
