@@ -6,13 +6,13 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 15:46:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/04 17:13:31 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/04 17:22:57 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		contain_set(char c, char const *set)
+static int	contain_set(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int		contain_set(char c, char const *set)
 	return (0);
 }
 
-int	len_no_set(char const *s1, char const *set)
+static int	len_no_set(char const *s1, char const *set)
 {
 	int	i;
 	int	len;
