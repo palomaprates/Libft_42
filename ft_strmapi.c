@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 13:00:26 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/05 13:04:02 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/05 14:50:50 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*str;
+	char			*str;
 	unsigned int	i;
 
 	i = 0;
