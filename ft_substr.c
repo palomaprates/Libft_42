@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:16:15 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/04 15:18:56 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/05 10:08:00 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	size_t	i;
+	unsigned int	i;
+	unsigned int	size;
 
 	i = 0;
-	substr = malloc(len + 1);
+	size = (unsigned int)len;
+	if (len > ft_strlen(s))
+		size = ft_strlen(s);
+	substr = malloc(size + 1);
 	if (!substr)
 		return (NULL);
-	while (i < len)
+	while (i < size && s[i])
 	{
 		substr[i] = s[start];
 		start++;
@@ -34,9 +38,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // #include <stdio.h>
 // int	main()
 // {
-// 	char s[5] = "hello";
-// 	unsigned int start = 0;
-// 	size_t len = 4;
-// 	char *res = ft_substr(s, start, len);
+// 	// char s[5] = "hello";
+// 	// unsigned int start = 0;
+// 	// size_t len = 42000;
+// 	char *res = ft_substr("BONJOUR LES HARICOTS !", 8, 14);
 // 	printf("%s\n", res);
+// 	free(res);
 // }
