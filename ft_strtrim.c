@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 15:46:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/04 17:22:57 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/06 12:36:18 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,42 +26,55 @@ static int	contain_set(char c, char const *set)
 	return (0);
 }
 
-static int	len_no_set(char const *s1, char const *set)
+static	int		get_init_index(char const *s1, char const *set)
 {
 	int	i;
-	int	len;
 
 	i = 0;
-	len = 0;
-	while (s1[i])
+	while (contain_set(s1[i], set))
+		i++;
+	return (i);
+}
+
+static	int		get_final_index(char const *s1, char const *set)
+{
+	int	len;
+
+	len = ft_strlen(s1) - 1;
+	while (len >= 0 && contain_set(s1[len], set))
+		len--;
+	return (len);
+}
+
+static char	*ft_strndup(const char *s, int len)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	dest = malloc(len + 1);
+	if (!dest)
+		return (NULL);
+	while (s[i] && i < len)
 	{
-		if (!contain_set(s1[i], set))
-			len++;
+		dest[i] = s[i];
 		i++;
 	}
-	return (len);
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*strtrim;
 	int		i;
-	int		j;
+	int		len;
 
-	i = 0;
-	j = 0;
-	strtrim = malloc(len_no_set(s1, set));
-	if (!strtrim)
-		return (NULL);
-	while (s1[i])
-	{
-		if (!contain_set(s1[i], set))
-		{
-			strtrim[j] = s1[i];
-			j++;
-		}
-		i++;
-	}
+	i = get_init_index(s1, set);
+	len = get_final_index(s1, set);
+	if (i > len)
+		return (ft_strdup(""));
+	strtrim = ft_strndup(&s1[i], len - i + 1);
 	return (strtrim);
 }
 
