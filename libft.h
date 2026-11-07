@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:49:14 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/05 14:35:00 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/07 12:15:13 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+    void			*content;
+    struct s_list	*next;
+} t_list;
 
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -52,5 +58,8 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_itoa(int n);
 char        **ft_split(char const *s, char c);
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+unsigned int	ft_lstsize(t_list *lst);
 
 #endif

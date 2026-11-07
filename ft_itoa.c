@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 13:08:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/05 14:49:13 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/07 10:57:52 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_digits(int n)
+static int	count_digits(long nb)
 {
 	int	counter;
 
 	counter = 0;
-	while (n)
+	if (nb <= 0)
+		counter++;
+	while (nb)
 	{
 		counter++;
-		n = n / 10;
+		nb = nb / 10;
 	}
 	return (counter);
 }
@@ -28,30 +30,39 @@ static int	count_digits(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
+	long	nb;
 	int		i;
-	int		j;
+	int		is_negative;
 
-	i = 0;
-	j = 0;
-	str = malloc(count_digits(n) + 1);
+	nb = n;
+	is_negative = 0;
+	i = count_digits(nb);
+	str = malloc(i + 1);
 	if (!str)
 		return (NULL);
-	while (n)
+	if (nb < 0)
 	{
-		str[i] = n % 10 + '0';
-		i++;
-		n = n / 10;
+		is_negative = 1;
+		nb = -nb;
 	}
+	str[i] = '\0';
 	i--;
-	while (i > 0)
+	if (nb == 0)
 	{
-		str[j] = str[i];
+		str[i] = '0';
 		i--;
-		j++;
 	}
-	str[j] = '\0';
+	while (nb)
+	{
+		str[i] = (nb % 10) + '0';
+		nb = nb / 10;
+		i--;
+	}
+	if (is_negative)
+		str[0] = '-';
 	return (str);
 }
+
 // #include <stdio.h>
 // int	main()
 // {
