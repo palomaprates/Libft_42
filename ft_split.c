@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/06 12:25:57 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/10 12:06:22 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ static int	count_words(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))			
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static int word_len(char const *s, char c)
+static int	word_len(char const *s, char c)
 {
-	int	 i;
-	int	 len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = 0;
@@ -45,9 +45,9 @@ static int word_len(char const *s, char c)
 	return (len);
 }
 
-static int  separator_len(char const *s, char c)
+static int	separator_len(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] == c)
@@ -95,7 +95,7 @@ char	**ft_split(char const *s, char c)
 	arr[i] = NULL;
 	return (arr);
 }
- 
+
 // #include <stdio.h>
 // int main()
 // {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 13:08:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/07 10:57:52 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/10 11:51:50 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,11 @@ static int	count_digits(long nb)
 	return (counter);
 }
 
-char	*ft_itoa(int n)
+static char	*int_to_char(char *str, long nb, int i)
 {
-	char	*str;
-	long	nb;
-	int		i;
 	int		is_negative;
 
-	nb = n;
 	is_negative = 0;
-	i = count_digits(nb);
-	str = malloc(i + 1);
-	if (!str)
-		return (NULL);
 	if (nb < 0)
 	{
 		is_negative = 1;
@@ -61,6 +53,20 @@ char	*ft_itoa(int n)
 	if (is_negative)
 		str[0] = '-';
 	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	nb;
+	int		i;
+
+	nb = n;
+	i = count_digits(nb);
+	str = malloc(i + 1);
+	if (!str)
+		return (NULL);
+	return (int_to_char(str, nb, i));
 }
 
 // #include <stdio.h>

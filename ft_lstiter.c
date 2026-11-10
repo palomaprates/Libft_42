@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/10 11:59:13 by pprates           #+#    #+#             */
+/*   Updated: 2026/11/10 11:59:31 by pprates          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // static int	ft_islower(int c)
@@ -22,11 +34,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    while (lst)
-    {
-        f(lst->content);
-        lst = lst->next;
-    }
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 
 // #include <stdio.h>

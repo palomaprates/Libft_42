@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 15:46:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/06 12:36:18 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/10 12:07:28 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	contain_set(char c, char const *set)
 	return (0);
 }
 
-static	int		get_init_index(char const *s1, char const *set)
+static int	get_init_index(char const *s1, char const *set)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ static	int		get_init_index(char const *s1, char const *set)
 	return (i);
 }
 
-static	int		get_final_index(char const *s1, char const *set)
+static int	get_final_index(char const *s1, char const *set)
 {
 	int	len;
 
