@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 12:01:20 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/10 12:01:21 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/10 12:34:43 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
 	node->content = content;
 	node->next = NULL;
 	return (node);
