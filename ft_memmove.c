@@ -1,25 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/10 12:02:35 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/11 16:18:43 by palomaprate      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dst;
-	unsigned char	*s;
+	const unsigned char	*s;
 	size_t			i;
 
+	if (n == 0 || dest == src)
+		return (dest);
 	dst = (unsigned char *)dest;
-	s = (unsigned char *)src;
+	s = (const unsigned char *)src;
 	if (dst < s)
 	{
 		i = 0;
@@ -32,11 +22,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else if (dst > s)
 	{
 		i = n;
-		while (i > 0)
-		{
-			i--;
+		while (i-- > 0)
 			dst[i] = s[i];
-		}
 	}
 	return (dest);
 }
@@ -46,8 +33,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 // int main()
 // {
-//     unsigned char src[5] = "hello";
-//     unsigned char src_orig[5] = "hello";
+//     unsigned char src[6] = "hello";
+//     unsigned char src_orig[6] = "hello";
 //     unsigned char dest[20];
 //     unsigned char dest_orig[20];
 //     int n = 3;

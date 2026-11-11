@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/30 12:22:38 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/11 14:20:20 by palomaprate      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -29,15 +18,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (len_dst + len_src);
 }
 
+// #include <stdio.h>
+// #include <string.h>
 // int	main()
 // {
-// 	char dst[200] = "hello, ";
-// 	const char src[6] = "world!";
-// 	char dst_orig[200] = "hello, ";
-// 	const char src_orig[6] = "world!";
+// 	char dst[4] = "ola";
+// 	const char src[6] = "mundo";
+// 	char dst_orig[4] = "ola";
+// 	const char src_orig[6] = "mundo";
 // 	size_t	dst_size = 4;
-// 	size_t res = ft_strlcat(dst, src, dst_size);
-// 	size_t res_orig = strlcat(dst_orig, src_orig, dst_size);
-// 	printf("ft: %zu\n", res);
-// 	printf("orig: %zu\n", res_orig);
+// 	size_t res = ft_strlcat(dst, src, 4);
+// 	size_t res_orig = strlcat(dst_orig, src_orig, 4);
+// 	printf("ft: %zu | dst: %s\n", res, dst);
+// 	printf("orig: %zu | dst: %s\n", res_orig, dst_orig);
 // }
