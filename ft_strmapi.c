@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 13:00:26 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/07 11:22:02 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 12:26:29 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 	{
 		str[i] = f(i, s[i]);
+		if (!str[i])
+			break;
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 

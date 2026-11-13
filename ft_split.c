@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/11 18:56:46 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 12:25:02 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,13 @@ char	**ft_split(char const *s, char c)
 	{
 		wl = word_len(&s[j], c);
 		arr[i] = ft_strndup(&s[j + separator_len(&s[j], c)], wl);
+		if (!arr[i])
+		{
+			while (i > 0)
+				free(arr[--i]);
+			free(arr);
+			return (NULL);
+		}
 		j = j + wl + separator_len(&s[j], c);
 		i++;
 	}
