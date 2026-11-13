@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 12:01:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/10 12:01:09 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 16:53:08 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*content;
 
 	new_lst = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
 	while (lst)
 	{
 		content = f(lst->content);
-		if (!content)
-		{
-			ft_lstclear(&new_lst, del);
-			return (NULL);
-		}
+		// if (!content)
+		// {
+		// 	ft_lstclear(&new_lst, del);
+		// 	return (NULL);
+		// }
 		new_node = ft_lstnew(content);
 		if (!new_node)
 		{

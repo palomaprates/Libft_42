@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:56:47 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/10 11:58:17 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 16:55:05 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*aux;
 
-	if (!*lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

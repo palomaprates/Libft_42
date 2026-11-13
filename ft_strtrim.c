@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 15:46:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 12:30:37 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/13 15:52:18 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*strtrim;
 	int		i;
 	int		len;
+
 	if (!s1 || !set)
 		return (NULL);
 	i = get_init_index(s1, set);

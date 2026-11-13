@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 12:00:15 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/10 12:00:30 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 16:25:05 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
 	while (lst && lst->next)
 		lst = lst->next;
 	return (lst);

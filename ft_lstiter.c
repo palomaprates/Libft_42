@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:59:13 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/10 11:59:31 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 17:01:29 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!lst || !f)
+        return ;
 	while (lst)
 	{
 		f(lst->content);

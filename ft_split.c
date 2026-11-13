@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
+/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 12:25:02 by palomaprate      ###   ########.fr       */
+/*   Updated: 2026/11/13 16:44:02 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_words(char const *s, char c)
 
 	words = 0;
 	i = 0;
+	if (!s)
+		return (-1);
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
@@ -72,12 +74,10 @@ static char	*ft_strndup(const char *s, int len)
 	dest[i] = '\0';
 	return (dest);
 }
-
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		i;
-	int		wl;
 	int		j;
 
 	i = 0;
@@ -87,8 +87,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (i < count_words(s, c))
 	{
-		wl = word_len(&s[j], c);
-		arr[i] = ft_strndup(&s[j + separator_len(&s[j], c)], wl);
+		arr[i] = ft_strndup(&s[j + separator_len(&s[j], c)], word_len(&s[j], c));
 		if (!arr[i])
 		{
 			while (i > 0)
@@ -96,18 +95,17 @@ char	**ft_split(char const *s, char c)
 			free(arr);
 			return (NULL);
 		}
-		j = j + wl + separator_len(&s[j], c);
+		j = j + word_len(&s[j], c) + separator_len(&s[j], c);
 		i++;
 	}
 	arr[i] = NULL;
 	return (arr);
 }
-
 // #include <stdio.h>
 // int main()
 // {
-//     char s[] = "  hello world";
-//     char **arr = ft_split(s, ' ');
+//     char *s = NULL;
+//     char **arr = ft_split(NULL, ' ');
 //     int i = 0;
 //     while (i < count_words(s, ' '))
 //     {
