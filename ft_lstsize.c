@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 12:00:00 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/11 12:00:00 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 17:18:43 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ unsigned int	ft_lstsize(t_list *lst)
 	unsigned int	i;
 
 	i = 0;
+	if (!lst)
+		return (-1);
 	while (lst)
 	{
 		i++;

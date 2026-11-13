@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 16:44:02 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 17:29:26 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static char	*ft_strndup(const char *s, int len)
 	dest[i] = '\0';
 	return (dest);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
@@ -82,12 +83,15 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	arr = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!arr)
 		return (NULL);
 	while (i < count_words(s, c))
 	{
-		arr[i] = ft_strndup(&s[j + separator_len(&s[j], c)], word_len(&s[j], c));
+		arr[i] = ft_strndup\
+(&s[j + separator_len(&s[j], c)], word_len(&s[j], c));
 		if (!arr[i])
 		{
 			while (i > 0)

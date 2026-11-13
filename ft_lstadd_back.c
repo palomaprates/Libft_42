@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:53:06 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/11 19:02:17 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/13 17:17:12 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
+	if (!lst || !new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
