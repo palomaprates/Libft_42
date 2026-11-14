@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:16:15 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 17:27:11 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/14 17:08:51 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*substr;
-	unsigned int	i;
-	unsigned int	size;
+	char	*substr;
+	size_t	s_len;
+	size_t	i;
 
-	i = 0;
 	if (!s)
 		return (NULL);
-	size = (unsigned int)len;
-	if (len > ft_strlen(s) - start)
-		size = ft_strlen(s) - start;
-	substr = malloc(size + 1);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
+	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	while (start <= ft_strlen(s) && i < size && s[i])
+	i = 0;
+	while (i < len)
 	{
-		substr[i] = s[start];
-		start++;
+		substr[i] = s[start + i];
 		i++;
 	}
 	substr[i] = '\0';
 	return (substr);
 }
-
 // #include <stdio.h>
 // int	main()
 // {
