@@ -6,7 +6,7 @@
 /*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 17:29:26 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/14 13:15:32 by pprates          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,12 @@ char	**ft_split(char const *s, char c)
 		{
 			while (i > 0)
 				free(arr[--i]);
-			free(arr);
-			return (NULL);
+			return (free(arr), NULL);
 		}
 		j = j + word_len(&s[j], c) + separator_len(&s[j], c);
 		i++;
 	}
-	arr[i] = NULL;
-	return (arr);
+	return (arr[i] = NULL, arr);
 }
 // #include <stdio.h>
 // int main()
