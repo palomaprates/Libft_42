@@ -30,9 +30,6 @@ fclean: clean
 
 re: fclean all
 
-submit:
-	git push git@vogsphere.42lisboa.com:vogsphere/intra-uuid-834a303b-18be-4c8d-989b-bcb0416402f3-7772393-pprates HEAD:master
-
 bonus: all
 
-.PHONY: all clean fclean re submit bonus
+.PHONY: all clean fclean re bonus
