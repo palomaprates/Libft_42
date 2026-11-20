@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 15:46:08 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 15:52:18 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/20 12:58:01 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ static int	get_final_index(char const *s1, char const *set)
 {
 	int	len;
 
-	len = ft_strlen(s1) - 1;
+	len = ft_strlen(s1);
+	len--;
 	while (len >= 0 && contain_set(s1[len], set))
 		len--;
 	return (len);
@@ -55,7 +56,7 @@ static char	*ft_strndup(const char *s, int len)
 	dest = malloc(len + 1);
 	if (!dest)
 		return (NULL);
-	while (s[i] && i < len)
+	while (i < len && s[i])
 	{
 		dest[i] = s[i];
 		i++;

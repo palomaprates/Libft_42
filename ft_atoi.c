@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 14:27:02 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 17:12:54 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/20 12:20:23 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int	res;
-	int	sign;
-	int	i;
+	long	res;
+	int		sign;
+	int		i;
 
 	sign = 1;
 	i = 0;
@@ -39,14 +39,14 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }
 
 // #include <stdio.h>
 // int	main()
 // {
-// 	int res_orig = atoi(" +10000pppp");
-// 	int res = ft_atoi("  +10000pppp");
+// 	int res_orig = atoi("-2147483648");
+// 	int res = ft_atoi("-2147483648");
 // 	printf("orig: %d\n", res_orig);
 // 	printf("ft: %d\n", res);
 // }

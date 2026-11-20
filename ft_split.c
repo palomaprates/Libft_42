@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 16:56:12 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/14 13:15:32 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/20 12:44:49 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static char	*ft_strndup(const char *s, int len)
 	dest = malloc(len + 1);
 	if (!dest)
 		return (NULL);
-	while (s[i] && i < len)
+	while (i < len && s[i])
 	{
 		dest[i] = s[i];
 		i++;

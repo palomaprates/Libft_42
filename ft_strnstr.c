@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:52:43 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/03 14:05:59 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/20 12:53:16 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t len)
 	size_t	j;
 
 	j = 0;
-	while (big[i] == little[j] && little[j] && i < len)
+	while (i < len && little[j] && big[i] == little[j])
 	{
 		i++;
 		j++;
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (!little[i])
 		return ((char *)big);
-	while (big[i] && i < len)
+	while (i < len && big[i])
 	{
 		if (is_str_equal(big, little, i, len))
 			return ((char *)&big[i]);

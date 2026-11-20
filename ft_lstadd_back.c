@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pprates <pprates@student.42.fr>            +#+  +:+       +#+        */
+/*   By: palomaprates <palomaprates@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:53:06 by pprates           #+#    #+#             */
-/*   Updated: 2026/11/13 17:17:12 by pprates          ###   ########.fr       */
+/*   Updated: 2026/11/20 12:25:42 by palomaprate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	temp = *lst;
-	while (temp && temp->next)
+	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
 }
